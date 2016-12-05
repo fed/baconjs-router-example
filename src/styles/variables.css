@@ -1,0 +1,11 @@
+/* Typography */
+@value fontBrand: "Helvetica Neue", Helvetica, Arial, sans-serif;
+@value fontCode: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+
+/* Colors */
+@value green: #3cca5e;
+@value blue: #056ef0;
+@value red: #f2565a;
+@value denim: #24303c;
+@value gray: #454a54;
+@value ivory: #f7f7f7;

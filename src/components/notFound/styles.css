@@ -1,0 +1,6 @@
+@value red from "../../styles/variables.css";
+
+.title {
+  color: red;
+  font-size: 35px;
+}

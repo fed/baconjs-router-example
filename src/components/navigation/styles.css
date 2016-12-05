@@ -1,0 +1,26 @@
+@value green, denim from "../../styles/variables.css";
+
+.wrapper {
+  background-color: denim;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  display: inline-block;
+}
+
+.link {
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: green;
+  }
+}

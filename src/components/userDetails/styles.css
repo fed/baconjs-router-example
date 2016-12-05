@@ -1,0 +1,14 @@
+@value green, ivory, fontCode from "../../styles/variables.css";
+
+.username {
+  color: green;
+  background-color: ivory;
+  border-radius: 3px;
+  font-family: fontCode;
+  padding: 3px 5px;
+}
+
+.avatar {
+  max-width: 200px;
+  width: 100%;
+}

@@ -1,0 +1,11 @@
+@value gray, fontBrand from "./variables.css";
+
+:global {
+  body {
+    color: gray;
+    background-color: #fff;
+    font-family: fontBrand;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
