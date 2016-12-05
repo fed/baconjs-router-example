@@ -6,7 +6,7 @@ Have a look at the official [docs](https://github.com/FoxSportsAustralia/baconjs
 
 ## See Live Example
 
-[https://baconjs-router-example-razvcrijaf.now.sh](https://baconjs-router-example-razvcrijaf.now.sh) :tada:
+[https://baconjs-router-example-zggqxwgdeg.now.sh/](https://baconjs-router-example-zggqxwgdeg.now.sh/) :tada:
 
 ## Development Tasks
 
