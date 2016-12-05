@@ -1,4 +1,4 @@
-@value green, ivory, fontCode from "../../styles/variables.css";
+@value red, green, ivory, fontCode from "../../styles/variables.css";
 
 .username {
   color: green;
@@ -11,4 +11,9 @@
 .avatar {
   max-width: 200px;
   width: 100%;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
 }

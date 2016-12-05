@@ -30,16 +30,30 @@ export default class UserDetails extends React.Component {
   fetchUserDetails(username) {
     const url = `${GITHUB_API_ROOT_URL}/${username}`;
 
-    this.setState({
-      loading: true
-    });
+    this.showSpinner();
 
     axios
       .get(url)
-      .then((response) => this.setState({
-        userDetails: response.data,
-        loading: false
-      }));
+      .then((response) => this.setState(
+        { userDetails: response.data },
+        this.hideSpinner
+      ))
+      .catch(() => this.setState(
+        { userDetails: false },
+        this.hideSpinner
+      ));
+  }
+
+  showSpinner() {
+    this.setState({
+      loading: true
+    });
+  }
+
+  hideSpinner() {
+    this.setState({
+      loading: false
+    });
   }
 
   render() {
@@ -52,21 +66,33 @@ export default class UserDetails extends React.Component {
     const repos = get(this.state, 'userDetails.public_repos');
 
     return (
-      <article>
-        <h2>GitHub Profile for <span className={styles.username}>{username}</span></h2>
+      <section>
+        {
+          !this.state.userDetails && (
+            <p className={styles.error}>User {username} doesn't exist, moving on...</p>
+          )
+        }
 
-        <p><img src={avatar} alt={username} className={styles.avatar} /></p>
+        {
+          this.state.userDetails && (
+            <article>
+              <h2>GitHub Profile for <span className={styles.username}>{username}</span></h2>
 
-        <ul>
-          <li><strong>Link to Profile on GitHub:</strong> <a href={url} target="_blank" rel="noopener noreferrer">{url}</a></li>
-          <li><strong>Email:</strong> <a href={`mailto:${email}`}>{email}</a></li>
-          <li><strong>Location:</strong> {location}</li>
-          <li><strong>Type:</strong> {type}</li>
-          <li><strong>Number of Public Repositories:</strong> {repos}</li>
-        </ul>
+              <p><img src={avatar} alt={username} className={styles.avatar} /></p>
+
+              <ul>
+                <li><strong>Link to Profile on GitHub:</strong> <a href={url} target="_blank" rel="noopener noreferrer">{url}</a></li>
+                <li><strong>Email:</strong> <a href={`mailto:${email}`}>{email}</a></li>
+                <li><strong>Location:</strong> {location}</li>
+                <li><strong>Type:</strong> {type}</li>
+                <li><strong>Number of Public Repositories:</strong> {repos}</li>
+              </ul>
+            </article>
+          )
+        }
 
         <Spinner isVisible={this.state.loading} />
-      </article>
+      </section>
     );
   }
 }

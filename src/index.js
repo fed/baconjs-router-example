@@ -18,8 +18,8 @@ const router = Router(
   // Match string
   '/about', () => Bacon.later(0, <About />),
 
-  // Match route `user` followed by a number of digits
-  /user\/(\w+)/, (idMatchedFromUrl) => Bacon.later(0, <UserDetails username={idMatchedFromUrl} />),
+  // Match route `user` followed by a number of characters
+  /user\/(\w+)/, (username) => Bacon.later(0, <UserDetails username={username} />),
 
   // Any other pattern match...
   // If we don't catch our 404s, we won't hear it on a stream.
