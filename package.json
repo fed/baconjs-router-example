@@ -1,6 +1,6 @@
 {
   "name": "baconjs-router-example",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "baconjs-router Example using React and Webpack",
   "main": "index.html",
   "license": "MIT",
